@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\controllers\Backend\contentcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.welcome');
-});
+//Route::get('/', function () {
+  //  return view('admin.content');
+//});
+Route::get('/admin', [contentcontroller::class,'admin']);
