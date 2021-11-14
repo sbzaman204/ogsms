@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\contentcontroller;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SalesController;
+use App\Http\Controllers\Backend\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,4 @@ Route::get('/admin', [contentcontroller::class,'admin']);
 Route::get('/category',[CategoryController::class, 'category'])->name('category');
 Route::get('/product',[ProductController::class, 'product'])->name('product');
 Route::get('/sales',[SalesController::class, 'sales'])->name('sales');
+Route::get('/customer',[CustomerController::class,'customer'])->name('customer');
