@@ -5,8 +5,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
+      <th scope="col">serial num</th>
+      <th scope="col">product name</th>
       <th scope="col">Last</th>
       <th scope="col">Handle</th>
     </tr>

@@ -11,4 +11,9 @@ class CategoryController extends Controller
     {
         return view('admin.layout.category');
     }
+
+    public function categoryform()
+    {
+        return view('admin.layout.categoryform');
+    }
 }

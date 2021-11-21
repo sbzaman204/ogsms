@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class StockController extends Controller
 {
-    public function customer()
+    public function stock()
     {
-        return view('admin.layout.customer');
+        return view('admin.layout.stock');
     }
 }
