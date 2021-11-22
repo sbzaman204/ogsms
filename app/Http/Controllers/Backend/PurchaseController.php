@@ -22,7 +22,7 @@ class PurchaseController extends Controller
         'product_code'=>$request->product_code,
         'product_name'=>$request->product_name,
         'order_date'=>$request->order_date,
-        'quantity'=>$request->quantity,
+         'quantity'=>$request->quantity,
       ]);
       return redirect()->back();
     }

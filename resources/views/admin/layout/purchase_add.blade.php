@@ -1,6 +1,7 @@
 @extends('admin.master')
 
-@extends('admin.master')
+@section('content')
+
 <form action="{{route('purchase.store')}}"method='post'>
     @csrf
   

@@ -1,34 +1,29 @@
 @extends('admin.master')
 
 @section('content')
-<button type="button" class="btn btn-success">Success</button>
+
+<h1>Category List</h1>
+
+ <a href="{{route('category.form')}}" class="btn btn-success">Submit your data</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">pr</th>
-      <th scope="col"></th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Product Code</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product type</th>
+    
     </tr>
   </thead>
   <tbody>
+    @foreach($category as $data)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$data->product_code}}</th>
+      <td>{{$data->product_name}}</td>
+       <td>{{$data->product_type}}</td>
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
+    
   </tbody>
 </table>
 
