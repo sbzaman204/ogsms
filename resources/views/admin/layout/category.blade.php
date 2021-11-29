@@ -8,18 +8,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Product Code</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Product type</th>
+      <th scope="col">category name</th>
+      <th scope="col">category description</th>
+      
     
     </tr>
   </thead>
   <tbody>
     @foreach($category as $data)
     <tr>
-      <th scope="row">{{$data->product_code}}</th>
-      <td>{{$data->product_name}}</td>
-       <td>{{$data->product_type}}</td>
+      <th scope="row">{{$data->category_name}}</th>
+      <td>{{$data->category_description}}</td>
+      
       
     </tr>
     @endforeach

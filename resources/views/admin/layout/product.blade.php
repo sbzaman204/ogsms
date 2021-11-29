@@ -2,49 +2,35 @@
 
 @section('content')
 
-<button type="button" class="btn btn-success">Success</button>
+<h1>Product List</h1>
+
+<!-- <button type="button" class="btn btn-success">Success</button> -->
+<a class="btn btn-primary" href="{{route('product.form')}}">Add product iteams</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">product code</th>
+      <th scope="col">category id</th>
       <th scope="col">product name</th>
       <th scope="col">product price</th>
-      <th scope="col">product unit</th>
+      <th scope="col">product quantity</th>
       <th scope="col">product description</th>
+      <th scope="col">product image</th>
     
     </tr>
   </thead>
-  <tbody>
+  <tbody>   
+    @foreach($product as $data)
     <tr>
-      <th scope="row">1</th>
-      <td>Rice</td>
-      <td>70</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>oil</td>
-      <td>600</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Onion</td>
-      <td>70</td>
-      <td>@twitter</td>
-      <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>70</td>
-      <td>@twitter</td>
-    </tr>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td colspan="2">vegetables</td>
-      <td>70</td>
-      <td>@twitter</td>
-    </tr>
+      <th scope="row">{{$data->category_id}}</th>
+      <td>{{$data->product_name}}</td>
+      <td>{{$data->product_price}}</td>
+      <td>{{$data->product_quantity}}</td>
+      <td>{{$data->product_description}}</td>
+      <td>{{$data->product_image}}</td>
+
+    </tr> 
+    @endforeach
+
   </tbody>
 </table>
 

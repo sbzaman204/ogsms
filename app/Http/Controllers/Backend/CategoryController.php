@@ -20,11 +20,14 @@ class CategoryController extends Controller
         return view('admin.layout.categoryform');
     }
     public function store(Request $request){
+        $request->validate([
+        'category_name'=>'required',
+            'category_description'=>'required',
+            
+        ]);
         category::create([
-            'product_code'=>$request->product_code,
-            'product_name'=>$request->product_name,
-            'product_price'=>$request->product_price,
-            'product_description'=>$request->product_description,
+            'category_name'=>$request->category_name,
+            'category_description'=>$request->category_description,
         ]);
         return redirect()->back();
     }
