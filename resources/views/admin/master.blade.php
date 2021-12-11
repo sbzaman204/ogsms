@@ -43,23 +43,23 @@
                             
                             
                                 
-                            <a class="nav-link" href="{{route('customer')}}">
+                            <a class="nav-link" href="{{route('user')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                customer
+                                user
                             </a>
                             <a class="nav-link" href="{{route('purchase')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 purchase
                             </a>
 
-                            <a class="nav-link" href="{{route('sales')}}">
+                            <a class="nav-link" href="{{route('order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                sales
+                                order 
                             </a>
 
-                            <a class="nav-link" href="{{route('stock')}}">
+                            <a class="nav-link" href="{{route('order-details')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                stock
+                                order details
                             </a>
                             <a class="nav-link" href="{{route('deliveryman')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

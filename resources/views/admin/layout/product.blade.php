@@ -15,6 +15,8 @@
       <th scope="col">product quantity</th>
       <th scope="col">product description</th>
       <th scope="col">product image</th>
+      <th scope="col">product status</th>
+
     
     </tr>
   </thead>
@@ -26,8 +28,10 @@
       <td>{{$data->product_price}}</td>
       <td>{{$data->product_quantity}}</td>
       <td>{{$data->product_description}}</td>
-      <td>{{$data->product_image}}</td>
-
+      <td>
+        <img src="{{url('/uploads/'.$data->product_image)}}" width="100px" alt="product_image">
+      </td>
+  <td>{{$data->product_status}}</td>
     </tr> 
     @endforeach
 

@@ -23,11 +23,15 @@ class CategoryController extends Controller
         $request->validate([
         'category_name'=>'required',
             'category_description'=>'required',
+            'category_status'=>'required',
+
             
         ]);
         category::create([
             'category_name'=>$request->category_name,
             'category_description'=>$request->category_description,
+            'category_status'=>$request->category_status,
+
         ]);
         return redirect()->back();
     }

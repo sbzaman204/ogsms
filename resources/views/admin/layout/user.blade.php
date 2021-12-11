@@ -1,5 +1,4 @@
 @extends('admin.master')
-
 @section('content')
 
 <button type="button" class="btn btn-success">Success</button>

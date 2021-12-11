@@ -19,21 +19,36 @@ class ProductController extends Controller
         return view('admin.layout.productform');
     }
     public function store(Request $request){
+       
+        if($request->hasFile('product_image'))
+        {
+            $file=$request->file('product_image');
+            $filename=date('Ymdhms').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$filename);
+        }
+
+
         $request->validate([
         'category_id'=>'required',
         'product_name'=>'required',
         'product_price'=>'required',
         'product_quantity'=>'required',
         'product_description'=>'required',
-        'product_image'=>'required',
+        'product_image'=>'required',      
+        'product_status'=>'required',
+
+
         ]);
         product::create([
             'category_id'=>$request->category_id,
             'product_name'=>$request->product_name,
             'product_price'=>$request->product_price,
             'product_quantity'=>$request->product_quantity,
-            'product_description'=>$request->product_descrription,
-            'product_image'=>$request->product_image,
+            'product_description'=>$request->product_description,
+            'product_image'=>$filename,            
+            'product_status'=>$request->product_status,
+
+
         ]);
         return redirect()->back();
     }

@@ -10,6 +10,7 @@
     <tr>
       <th scope="col">category name</th>
       <th scope="col">category description</th>
+        <th scope="col">category status</th>
       
     
     </tr>
@@ -19,6 +20,8 @@
     <tr>
       <th scope="row">{{$data->category_name}}</th>
       <td>{{$data->category_description}}</td>
+      <td>{{$data->category_status}}</td>
+
       
       
     </tr>

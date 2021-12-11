@@ -17,10 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('product_name');
-            $table->digit('product_price');
+            $table->double('product_price');
             $table->integer('product_quantity');
             $table->text('product_description');
-            $table->file('product_image');
+            $table->string('product_image');
+            $table->string('product_status');
+
             $table->timestamps();
             
 
