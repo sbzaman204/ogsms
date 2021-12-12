@@ -6,7 +6,7 @@
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">customer id</label>
-      <input name="customer_id" type="integer" class="form-control"required>
+      <input name="customer_id" type="number" class="form-control"required>
       
     </div>
     <div class="mb-3">
@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">order date</label>
-        <input name="order_date" type="number" class="form-control"required>
+        <input name="order_date" type="date" class="form-control"required>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">order status</label>

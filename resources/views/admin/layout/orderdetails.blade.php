@@ -2,34 +2,30 @@
 
 @section('content')
 
-<button type="button" class="btn btn-success">Success</button>
+<a href="{{ route('orderdetails.form') }}" class="btn btn-success">Order details</a>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">pr</th>
-      <th scope="col"></th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">order id</th>
+      <th scope="col">product id</th>
+      <th scope="col">quantity</th>
+      <th scope="col">unit price</th>
+      <th scope="col">subt otal</th>
+
     </tr>
   </thead>
   <tbody>
+    @foreach($data as $a)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{{ $a->order_id }}</td>
+      <td>{{$a->product_id  }}</td>
+      <td>{{ $a->quantity }}</td>
+      <td>{{ $a->unit_price }}</td>
+      <td>{{$a->sub_total  }}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
+    
+    
   </tbody>
 </table>
 

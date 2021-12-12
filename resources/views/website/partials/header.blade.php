@@ -17,11 +17,14 @@
                       </div>
                     {{-- end search bar --}}
                 </li>
+                <li class="nav-item"><a class="nav-link" href="{{route('registration')}}">Sign In</a></li>
                 <li class="nav-item"><a class="nav-link" href="#product">Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="#category">Category</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#orderdetails">orderdetails</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('loginshow')}}">Log In</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Log Out</a></li>
             </ul>
         </div>
     </div>

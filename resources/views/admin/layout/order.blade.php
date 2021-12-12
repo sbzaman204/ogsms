@@ -11,7 +11,6 @@
   <thead>
     <tr>
       <th scope="col">customer id</th>
-      <th scope="col"></th>
       <th scope="col">total</th>
       <th scope="col">order date</th>
       <th scope="col">order status</th>
@@ -23,7 +22,7 @@
   <tbody>
     @foreach($order as $data)
     <tr>
-      <th scope="row">{{$data->customer_id }}</th>
+      <th scope="row">{{$data->customer_id}}</th>
       <td>{{$data->total}}</td>
       <td>{{$data->order_date}}</td>
       <td>{{$data->order_status}}</td>
