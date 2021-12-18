@@ -2,14 +2,23 @@
 
 
 @section('content')
-<a class="btn btn-primary" href="{{route('product.form')}}">Add product iteams</a>
-@csrf
+{{-- <a class="btn btn-primary" href="{{route('product.form')}}">Add product iteams</a> --}}
+<div class="container" style="margin-top: 20px;">
 <form action="{{ route('product.store') }}" method='post' enctype="multipart/form-data">
   @csrf
-  <div class="mb-3">
+  {{-- <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">category id</label>
     <input name="category_id" type="integer" class="form-control"required>
-  </div>
+  </div> --}}
+<div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label">category name</label>
+  <select name="category_id" class="form-select" aria-label="Default select example">
+    <option selected>Select Product Category</option>
+    @foreach($categories as $data)
+    <option value={{ $data->id }}>{{ $data->category_name }}</option>
+   @endforeach
+  </select>
+</div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Product name</label>
     <input name="product_name" type="string" class="form-control"required>
@@ -36,6 +45,7 @@
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
 
 
 @endsection

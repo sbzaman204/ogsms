@@ -9,23 +9,37 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\PurchaseController;
 use App\Http\Controllers\Backend\OrderdetailsController;
 use App\Http\Controllers\Backend\DeliverymanController;
-use App\Http\Controllers\Frontend\RegistrationController;
+use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\ShowProductController;
+use App\Http\Controllers\Frontend\ShowCategoryController;
+use App\Http\Controllers\Frontend\HomeController;
 
 
 
 
 
 
-Route::get('/',function(){
-  return view('website.layouts.content');
-})->name('frontend.user');
 
-Route::get('/user/registration/show',[RegistrationController::class, 'registrationshow'])->name('registration');
-Route::post('/user/store',[RegistrationController::class, 'userstore'])->name('user.store');
-Route:;get('/user/login/show',[RegistrationController::class,'loginshow'])->name('loginshow');
-Route::post('/login/post',[RegistrationController::class,'loginpost'])->name('user.post.login');
+// Route::get('/',function(){
+//   return view('website.layouts.content');
+// })->name('frontend.user');
 
+Route::get('/',[HomeController::class,'home'])->name('home');
 
+Route::get('/categoryWiseProduct/{id}',[HomeController::class,'categoryWiseProduct'])->name('categorywiseproduct');
+
+// Registration part
+Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
+Route::post('/user/do/registration',[LoginController::class,'doRegistration'])->name('user.do.registration');
+// login part
+Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
+Route::post('/user/do/login',[LoginController::class,'doLogin'])->name('user.do.login');
+// logout part
+Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
+//show product part
+Route::get('/user/showproduct',[ShowProductController::class,'showproduct'])->name('user.showproduct');
+// show category part
+Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])->name('user.showcategory');
 
 
 

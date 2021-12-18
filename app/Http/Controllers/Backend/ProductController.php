@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,7 +17,8 @@ class ProductController extends Controller
     }
 
     public function productform(){
-        return view('admin.layout.productform');
+        $categories = Category::all();
+        return view('admin.layout.productform',compact('categories'));
     }
     public function store(Request $request){
        
