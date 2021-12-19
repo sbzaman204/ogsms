@@ -8,7 +8,7 @@
             {{-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> --}}
         </div>
         <div class="row">
-            @foreach($categories as $data)
+            
 
             <div class="col-lg-4 col-sm-6 mb-4">
                 <!-- Portfolio item 1-->
@@ -21,13 +21,13 @@
                     </a>
                     <div class="portfolio-caption">
                         {{-- <img class="img-fluid" src="{{url('/uploads/'.$data->product_image)}}" style="height:300px;" alt="product_image"> --}}
-                        <div class="portfolio-caption-heading">{{$data->category_name}}</div>
-                        <div class="portfolio-caption-subheading text-muted">{{$data->category_description}}</div>  
-                        <div class="portfolio-caption-subheading text-muted">{{$data->category_status}}</div>
+                        <div class="portfolio-caption-heading">category_name</div>
+                        <div class="portfolio-caption-subheading text-muted">category_description</div>  
+                        <div class="portfolio-caption-subheading text-muted">status</div>
                     </div>
                 </div>
             </div>  
-        @endforeach
+      
 
         </div>
 

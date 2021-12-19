@@ -35,4 +35,22 @@ class CategoryController extends Controller
         ]);
         return redirect()->back();
     }
+    public function edit($id){
+        $category = Category::find($id);
+        // dd($id);
+        return view('admin.layout.edit_categoryform',compact('category'));
+    }
+    public function update(Request $request){
+        $category=category::find($request->id);
+        $category->category_name = $request->category_name;
+        $category->category_description = $request->category_description;
+        $category->category_status = $request->category_status;
+
+        $category->save();
+        return redirect('/category');
+
+
+
+        
+    }
 }

@@ -20,8 +20,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showproduct')}}">Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showcategory')}}">Category</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#orderdetails">orderdetails</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                
                 <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                 @if(auth()->user())
 
