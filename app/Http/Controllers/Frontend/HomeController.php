@@ -24,4 +24,15 @@ class HomeController extends Controller
         
         return view('website.layouts.categoryWise',compact('categoryWiseProduct','category'));
     }
+
+    public function productdetails($id)
+    {
+        // dd($id);
+        $product = Product::find($id);
+        // dd($product);
+        if ($product) {
+        return view('website.layouts.productdetails',compact('product'));
+            
+        }
+    }
 }

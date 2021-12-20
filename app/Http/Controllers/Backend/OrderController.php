@@ -22,21 +22,23 @@ class OrderController extends Controller
     public function store(Request $request){
         $request->validate([
         'customer_id'=>'required',
-            'total'=>'required',
-            'order_date'=>'required',
-            'order_status'=>'required',
+            'product_id'=>'required',
             'order_number'=>'required',
+            'order_date'=>'required',
 
             
         ]);
-        order::create([
+        Order::create([
             'customer_id'=>$request->customer_id,
-            'total'=>$request->total,
-            'order_date'=>$request->order_date,
-            'order_status'=>$request->order_status,
+            'product_id'=>$request->product_id,
             'order_number'=>$request->order_number,
-
+            'order_date'=>$request->order_date,
+            
         ]);
-        return redirect()->back();
+        return redirect()->route('order');
+    }
+    public function orderview($id){
+        $order = Order::find($id);
+        return view('admin.layout.orderview',compact('order'));
     }
 }

@@ -10,7 +10,7 @@
       <th scope="col">product id</th>
       <th scope="col">quantity</th>
       <th scope="col">unit price</th>
-      <th scope="col">subt otal</th>
+      <th scope="col">subt total</th>
 
     </tr>
   </thead>

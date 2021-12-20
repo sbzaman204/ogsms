@@ -29,7 +29,7 @@
       <td>{{$data->product_quantity}}</td>
       <td>{{$data->product_description}}</td>
       <td>
-        <img src="{{url('/uploads/'.$data->product_image)}}" width="100px" alt="product_image">
+        <img src="{{url('/website/layouts/.$filename->product_image')}}" width="100px" alt="product_image">
       </td>
   <td>{{$data->product_status}}</td>
     </tr> 

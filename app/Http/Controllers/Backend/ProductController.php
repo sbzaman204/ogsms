@@ -21,7 +21,7 @@ class ProductController extends Controller
         return view('admin.layout.productform',compact('categories'));
     }
     public function store(Request $request){
-       
+        $filename='';
         if($request->hasFile('product_image'))
         {
             $file=$request->file('product_image');
@@ -36,9 +36,9 @@ class ProductController extends Controller
         'product_price'=>'required',
         'product_quantity'=>'required',
         'product_description'=>'required',
-        'product_image'=>'required',      
+            
         'product_status'=>'required',
-
+        'product_image'=>$filename,  
 
         ]);
         product::create([

@@ -36,7 +36,7 @@ class LoginController extends Controller
             // dd($userpost);
         if (Auth::attempt($userpost)) {
             // dd("true");
-            return redirect()->route('frontend.user');
+            return redirect()->route('home');
         }
         else
         return redirect()->route('user.login');

@@ -27,6 +27,7 @@ use App\Http\Controllers\Frontend\HomeController;
 Route::get('/',[HomeController::class,'home'])->name('home');
 
 Route::get('/categoryWiseProduct/{id}',[HomeController::class,'categoryWiseProduct'])->name('categorywiseproduct');
+Route::get('/product/details{id}',[HomeController::class,'productdetails'])->name('productDetails');
 
 // Registration part
 Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
@@ -44,8 +45,7 @@ Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])-
 
 
 
-
-
+Route::group(['middleware'=>'auth'],function(){
 // Category part
 Route::get('/admin', [contentcontroller::class,'admin']);
 Route::get('/category',[CategoryController::class, 'category'])->name('category');
@@ -70,6 +70,7 @@ Route::post('/products/store',[ProductController::class,'store'])->name('product
 Route::get('/order',[OrderController::class, 'order'])->name('order');
 Route::get('/orderform',[OrderController::class, 'orderform'])->name('order.form');
 Route::post('/orders/store',[OrderController::class,'store'])->name('order.store');
+Route::get('/orders/view/{id}',[OrderController::class,'orderview'])->name('order.view');
 
 
 
@@ -103,3 +104,6 @@ Route::post('/orderdetailsform/store',[OrderdetailsController::class,'orderdetai
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 
 // Route::post('/purchasestore',[PurchaseController::class,'purchasestore'])->name('purchasestore');
+
+});
+

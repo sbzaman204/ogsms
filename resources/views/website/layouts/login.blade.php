@@ -14,7 +14,7 @@
             
             <div class="field">
               <input type="text" name="email" placeholder="Enter your email">
-              <i class='fas fa-envelope'></i>
+              
             </div>
           </div>
           <div class="dbl-field">
@@ -31,9 +31,10 @@
           </div>
         </form>
         
-        <div class="border-top card-body text-center">Have an account? <a href="{{route('user.registration')}}">Sign Up</a></div>
+        
+    <div class="border-top card-body text-center">Have an account? <a href="{{route('user.registration')}}">Sign Up</a></div>
 
-    </div>
+  </div>
 </div>
 
 @endsection

@@ -17,6 +17,8 @@
                       </div>
                     {{-- end search bar --}}
                 </li>
+                <li class="nav-item"><a class="nav-link" href="{{route('home')}}">Home</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showproduct')}}">Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showcategory')}}">Category</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
