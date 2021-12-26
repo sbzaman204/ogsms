@@ -13,6 +13,8 @@ use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\ShowProductController;
 use App\Http\Controllers\Frontend\ShowCategoryController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\CartController;
+
 
 
 
@@ -42,12 +44,14 @@ Route::get('/user/showproduct',[ShowProductController::class,'showproduct'])->na
 // show category part
 Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])->name('user.showcategory');
 
-
+Route::get('/add-to-cart',[CartController::class,'addToCart'])->name('add-to-cart');
 
 
 Route::group(['middleware'=>'auth'],function(){
 // Category part
 Route::get('/admin', [contentcontroller::class,'admin']);
+Route::get('/dashboard', [contentcontroller::class,'dashboard'])->name('dashboard');
+
 Route::get('/category',[CategoryController::class, 'category'])->name('category');
 Route::get('/categoryform',[CategoryController::class, 'categoryf'])->name('category.form');
 Route::post('/categories/store',[CategoryController::class,'store'])->name('category.store');

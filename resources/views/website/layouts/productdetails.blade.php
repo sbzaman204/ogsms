@@ -576,14 +576,15 @@ ul {
                         <div> <span class="product_price">TK {{ $product->product_price}} </span>  </div>
                             
                         <hr class="singleline">
-                        <div> <span class="product_info">Total Fat: 10.6 g
+                        <span class="product_info">Total Fat: 10.6 g
                             
                             
                            <span><br> <span class="product_info">Total Carbohydrate: 1 g<span><br> <span class="product_info">Protein · 12.6 g<span><br> <span class="product_info">Sugar · 1 g<span><br> <span class="product_info">In Stock: 400 egg<span><br> <span class="product_info">Sold: 150 egg sold this week<span><br> </div>
                         
                         <hr class="singleline">
                         <div class="order_info d-flex flex-row">
-                            <form action="#">
+                            <form action="{{ route('add-to-cart') }}" method="post">
+                            <input type="number" min="1" max="5" value="1" name="quantity"/>
                              <button type="submit" style="background-color: gray; padding-right:5px; padding-left:5px;">Add to Cart</button>
                             </form
                         </div>

@@ -10,4 +10,7 @@ class contentcontroller extends Controller
     public function admin(){
         return view('admin.content');
     }
+    public function dashboard(){
+        return view('admin.content');
+    }
 }
