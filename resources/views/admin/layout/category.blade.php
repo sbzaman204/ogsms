@@ -24,7 +24,7 @@
       <td>{{$data->category_status}}</td>
       <td>
         <a href="{{ route('category.edit',$data->id) }}" class="btn btn-success">Update &rarr;</a>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <a href="{{ route('category.delete',$data->id)}}" class="btn btn-danger">Delete</a>
       </td>
 
       

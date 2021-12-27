@@ -11,11 +11,11 @@
     <input name="category_id" type="integer" class="form-control"required>
   </div> --}}
 <div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">category name</label>
-  <select name="category_id" class="form-select" aria-label="Default select example">
+  <label for="exampleInputEmail1" class="form-label">product id</label>
+  <select name="product_id" class="form-select" aria-label="Default select example">
     <option selected>Select Product Category</option>
-    @foreach($categories as $data)
-    <option value={{ $data->id }}>{{ $data->category_name }}</option>
+    @foreach($products as $data)
+    <option value={{ $data->id }}>{{ $data->product_id }}</option>
    @endforeach
   </select>
 </div>

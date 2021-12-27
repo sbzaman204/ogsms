@@ -50,7 +50,12 @@ class CategoryController extends Controller
         return redirect('/category');
 
 
-
-        
     }
+
+    public function delete($id){
+        $category=category::find($id);
+        $category->delete();
+        return redirect()->back();
+    }
+
 }

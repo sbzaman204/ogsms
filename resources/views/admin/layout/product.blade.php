@@ -32,6 +32,10 @@
         <img src="{{url('/website/layouts/.$filename->product_image')}}" width="100px" alt="product_image">
       </td>
   <td>{{$data->product_status}}</td>
+      <td>
+        <a herf="{{ route('product.update',$data->id) }}"class="btn btn-success">update &rarr;</a>
+        <a herf="{{ route('product.delete',$data->id) }}"class="btn btn-success">delete</a>
+      </td>
     </tr> 
     @endforeach
 

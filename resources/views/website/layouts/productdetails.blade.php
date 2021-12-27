@@ -586,7 +586,7 @@ ul {
                             <form action="{{ route('add-to-cart') }}" method="post">
                             <input type="number" min="1" max="5" value="1" name="quantity"/>
                              <button type="submit" style="background-color: gray; padding-right:5px; padding-left:5px;">Add to Cart</button>
-                            </form
+                            </form>
                         </div>
                         <div class="row">
                             <div class="col-xs-6" style="margin-left: 13px;">

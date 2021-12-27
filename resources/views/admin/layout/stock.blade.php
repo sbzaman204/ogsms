@@ -5,7 +5,9 @@
     <thead>
       <tr>
         <th scope="col">Product Name</th>
+        <th scope="col">product quantity</th>
         <th scope="col">In stock</th>
+
       </tr>
     </thead>
     <tbody>

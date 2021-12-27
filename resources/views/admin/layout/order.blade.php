@@ -26,7 +26,7 @@
       <td>{{($data->order_number)}}</td>
       <td>{{($data->order_date)}}</td>
       <td>
-        <a class="btn btn-primary" href="{{route('order.view',$order->id)}}">View</a>
+        <a class="btn btn-primary" href="{{route('order.view',$data->id)}}">View</a>
       </td> 
     </tr>
     @endforeach      

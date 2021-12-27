@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\order;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
    public function order()   
     {
-        $order = order::all();
+        // dd("ok");
+        $order = Order::all();
 
         return view('admin.layout.order',compact('order'));
     } 
@@ -38,7 +39,11 @@ class OrderController extends Controller
         return redirect()->route('order');
     }
     public function orderview($id){
+        // dd($id);
         $order = Order::find($id);
-        return view('admin.layout.orderview',compact('order'));
+        if ($order) {
+            return view('admin.layout.orderview',compact('order'));
+
+        }
     }
 }

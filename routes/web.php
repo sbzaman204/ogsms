@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\PurchaseController;
 use App\Http\Controllers\Backend\OrderdetailsController;
 use App\Http\Controllers\Backend\StockController;
+use App\Http\Controllers\Backend\AdminLoginController;
+
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\ShowProductController;
 use App\Http\Controllers\Frontend\ShowCategoryController;
@@ -46,17 +48,31 @@ Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])-
 
 Route::get('/add-to-cart',[CartController::class,'addToCart'])->name('add-to-cart');
 
+Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
+Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
+
+
+
 
 Route::group(['middleware'=>'auth'],function(){
-// Category part
-Route::get('/admin', [contentcontroller::class,'admin']);
+Route::get('/admin',function(){
+    return view('admin.master');
+
+})->name('dashboard');
+Route::get('/admin/logout', [AdminLoginController::class,'logout'])->name('admin.logout');
+
+
+Route::get('/admin/home', [contentcontroller::class,'admin']);
 Route::get('/dashboard', [contentcontroller::class,'dashboard'])->name('dashboard');
 
+// category part
 Route::get('/category',[CategoryController::class, 'category'])->name('category');
 Route::get('/categoryform',[CategoryController::class, 'categoryf'])->name('category.form');
 Route::post('/categories/store',[CategoryController::class,'store'])->name('category.store');
 Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update',[CategoryController::class, 'update'])->name('category.update');
+Route::get('/category/{id}/delete',[CategoryController::class, 'delete'])->name('category.delete');
+
 
 
 
@@ -65,6 +81,12 @@ Route::post('/category/update',[CategoryController::class, 'update'])->name('cat
 Route::get('/product',[ProductController::class, 'product'])->name('product');
 Route::get('/productform',[ProductController::class, 'productform'])->name('product.form');
 Route::post('/products/store',[ProductController::class,'store'])->name('product.store');
+Route::get('/product/edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
+Route::post('/product/update',[ProductController::class, 'update'])->name('product.update');
+Route::get('/product/{id}/delete',[ProductController::class, 'delete'])->name('product.delete');
+
+
+
 
 
 
