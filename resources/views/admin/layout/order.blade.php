@@ -21,7 +21,6 @@
     @foreach($order as $data)
     <tr>
       <th scope="row">{{$data->customer_id}}</th>
-      <td>{{($data->customer_id)}}</td>
       <td>{{($data->product_id)}}</td>
       <td>{{($data->order_number)}}</td>
       <td>{{($data->order_date)}}</td>

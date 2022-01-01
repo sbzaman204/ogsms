@@ -55,12 +55,14 @@ class ProductController extends Controller
         ]);
         return redirect()->back();
     }
-    public function edit($id){
+    public function productedit($id){
+        // dd($id);
         $product = product::find($id);
-        return view('admin.layout.edit_productform',compact('product'));
+        return view('admin.layout.productedit',compact('product'));
     }
-    public function update(Request $request){
-        dd($request);
+    public function productupdate(Request $request,$id){
+        // dd($request);
+        dd($id);
         $product=product::find($request->id);
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
@@ -76,7 +78,7 @@ class ProductController extends Controller
         $category->save();
         return redirect('/product');
     }
-    public function delete($id){
+    public function productdelete($id){
         $product=product::find($id);
         $product->delete();
         return redirect()->back();

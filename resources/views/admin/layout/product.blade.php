@@ -33,8 +33,10 @@
       </td>
   <td>{{$data->product_status}}</td>
       <td>
-        <a herf="{{ route('product.update',$data->id) }}"class="btn btn-success">update &rarr;</a>
-        <a herf="{{ route('product.delete',$data->id) }}"class="btn btn-success">delete</a>
+        <a href="{{ route('product.edit',$data->id) }}" class="btn btn-success">edit</a>
+        <a href="{{ route('product.delete',$data->id) }}" class="btn btn-success">Delete</a>
+
+        {{-- <a herf="{{route('product.delete',$data->id)}}"class="btn btn-success">delete</a> --}}
       </td>
     </tr> 
     @endforeach

@@ -12,10 +12,14 @@ use App\Http\Controllers\Backend\StockController;
 use App\Http\Controllers\Backend\AdminLoginController;
 
 use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\CustomerProfileController;
 use App\Http\Controllers\Frontend\ShowProductController;
 use App\Http\Controllers\Frontend\ShowCategoryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
+
+
+
 
 
 
@@ -51,6 +55,8 @@ Route::get('/add-to-cart',[CartController::class,'addToCart'])->name('add-to-car
 Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
 
+// customer profile part
+Route::get('/customerprofile',[CustomerProfileController::class, 'customerprofile'])->name('customer.profile');
 
 
 
@@ -72,6 +78,8 @@ Route::post('/categories/store',[CategoryController::class,'store'])->name('cate
 Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update',[CategoryController::class, 'update'])->name('category.update');
 Route::get('/category/{id}/delete',[CategoryController::class, 'delete'])->name('category.delete');
+Route::get('/category/{id}/view',[CategoryController::class, 'categoryDetails'])->name('category.view');
+
 
 
 
@@ -81,9 +89,9 @@ Route::get('/category/{id}/delete',[CategoryController::class, 'delete'])->name(
 Route::get('/product',[ProductController::class, 'product'])->name('product');
 Route::get('/productform',[ProductController::class, 'productform'])->name('product.form');
 Route::post('/products/store',[ProductController::class,'store'])->name('product.store');
-Route::get('/product/edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
-Route::post('/product/update',[ProductController::class, 'update'])->name('product.update');
-Route::get('/product/{id}/delete',[ProductController::class, 'delete'])->name('product.delete');
+Route::get('/product/edit/{id}',[ProductController::class, 'productedit'])->name('product.edit');
+Route::post('/product/update/{id}',[ProductController::class, 'productupdate'])->name('product.update');
+Route::get('/product/{id}/delete',[ProductController::class, 'productdelete'])->name('product.delete');
 
 
 

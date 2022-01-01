@@ -8,8 +8,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function category()
+    public function category(Request$request)
     {
+        $search=$request->query('search');
+        if($search){
+            $category=Category::where('category_name','Like','%'.$search.'%')->get();
+            return view('admin.layout.category',compact('category'));
+        }
+
         $category = Category::all();
         // dd($category);
         return view('admin.layout.category',compact('category'));
@@ -34,6 +40,14 @@ class CategoryController extends Controller
 
         ]);
         return redirect()->back();
+    }
+
+    public function categoryDetails($id)
+    {
+
+        $category = Category::where('id',$id)->first();
+    
+        return view('admin.layout.categorydetails',compact('category'));
     }
     public function edit($id){
         $category = Category::find($id);

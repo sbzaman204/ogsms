@@ -40,10 +40,9 @@ class OrderController extends Controller
     }
     public function orderview($id){
         // dd($id);
-        $order = Order::find($id);
-        if ($order) {
-            return view('admin.layout.orderview',compact('order'));
+        $data = Order::find($id);
+        
+            return view('admin.layout.orderview',compact('data'));
 
         }
     }
-}
