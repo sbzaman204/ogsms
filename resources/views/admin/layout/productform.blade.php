@@ -15,7 +15,7 @@
   <select name="product_id" class="form-select" aria-label="Default select example">
     <option selected>Select Product Category</option>
     @foreach($products as $data)
-    <option value={{ $data->id }}>{{ $data->product_id }}</option>
+    <option value={{$data->id }}>{{$data->product_id }}</option>
    @endforeach
   </select>
 </div>

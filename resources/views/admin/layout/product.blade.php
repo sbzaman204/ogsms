@@ -28,10 +28,12 @@
       <td>{{$data->product_price}}</td>
       <td>{{$data->product_quantity}}</td>
       <td>{{$data->product_description}}</td>
+
       <td>
         <img src="{{url('/website/layouts/.$filename->product_image')}}" width="100px" alt="product_image">
       </td>
   <td>{{$data->product_status}}</td>
+
       <td>
         <a href="{{ route('product.edit',$data->id) }}" class="btn btn-success">edit</a>
         <a href="{{ route('product.delete',$data->id) }}" class="btn btn-success">Delete</a>

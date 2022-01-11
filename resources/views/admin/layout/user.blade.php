@@ -7,6 +7,8 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Action</th>
+
       
       
     </tr>
@@ -16,6 +18,7 @@
     <tr>
       <td>{{ $a->name }}</td>
       <td>{{ $a->email }}</td>
+      <a href="{{route('user.view',$data->id)}}" class="btn btn-success">view</a>
 
     </tr>
     @endforeach

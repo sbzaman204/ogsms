@@ -50,7 +50,7 @@ Route::get('/user/showproduct',[ShowProductController::class,'showproduct'])->na
 // show category part
 Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])->name('user.showcategory');
 
-Route::get('/add-to-cart',[CartController::class,'addToCart'])->name('add-to-cart');
+
 
 Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
@@ -58,6 +58,11 @@ Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('ad
 // customer profile part
 Route::get('/customerprofile',[CustomerProfileController::class, 'customerprofile'])->name('customer.profile');
 
+// cart
+Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('add-to-cart');
+Route::get('/cart',[CartController::class,'cartshow'])->name('cart');
+Route::get('/cart/remove/{id}', [CartController::class,'CartRemove'])->name('cart.remove');
+Route::put('/cart/update/{id}', [CartController::class,'CartUpdate'])->name('cart.update');
 
 
 Route::group(['middleware'=>'auth'],function(){

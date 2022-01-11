@@ -31,7 +31,10 @@
 
                 <li class="nav-item"><a class="nav-link" href="{{route('user.registration')}}">Registration</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.login')}}">Log In</a></li>
+                
+
                 @endif
+                <li class="nav-item"><a class="nav-link" href="{{ route('cart') }}">cart({{session('cart') ? count(session('cart')) : '0'}})</a></li>
             </ul>
         </div>
     </div>
