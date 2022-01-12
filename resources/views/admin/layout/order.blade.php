@@ -7,6 +7,21 @@
 <a class="btn btn-primary" href="{{route('order.form')}}">Add order iteams</a>
 
 
+{{-- //search --}}
+<form action="{{ route('order') }}">
+  <div class="input-group">
+    <div class="form-outline">
+      <input  type="text" name="search" class="form-control" placeholder="enter search">
+    </div>
+    <button type="submit" class="btn btn-primary">
+   submit
+    </button>
+  </div>
+  
+</form>
+ {{-- //search End --}}
+
+
 <table class="table">
   <thead>
     <tr>

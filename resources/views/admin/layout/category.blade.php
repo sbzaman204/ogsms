@@ -5,7 +5,7 @@
 <h1>Category List</h1>
 
  <a href="{{route('category.form')}}" class="btn btn-success">Add product</a>
-
+{{-- //search --}}
 <form action="{{ route('category') }}">
   <div class="input-group">
     <div class="form-outline">
@@ -17,7 +17,7 @@
   </div>
   
 </form>
- 
+ {{-- //search End --}}
 <table class="table">
   <thead>
     <tr>

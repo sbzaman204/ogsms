@@ -37,7 +37,7 @@ class CartController extends Controller
                     $id => [
                         'id' => $product->id,
                         'name' => $product->product_name,
-                        'quantity' => $request->product_quantity,
+                        'quantity' => $product->product_quantity,
                         'price' => $product->product_price,
                         'image' => $product->product_image,
                         'sub_total' => $product->product_price * $request->product_quantity
@@ -62,7 +62,7 @@ class CartController extends Controller
             $cartData[$id] = [
                 'id' => $product->id,
                         'name' => $product->product_name,
-                        'quantity' => $request->product_quantity,
+                        'quantity' => $product->product_quantity,
                         'product_size' => $request->product_size,
                         'price' => $product->product_price,
                         'image' => $product->product_image,

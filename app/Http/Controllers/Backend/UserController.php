@@ -13,4 +13,9 @@ class UserController extends Controller
         $data=User::all();
         return view('admin.layout.user',compact('data'));
     }
+    public function userview($id){
+        $data=User::find($id);
+        return view('admin.layout.userview',compact('data'));   
+
+    }
 }

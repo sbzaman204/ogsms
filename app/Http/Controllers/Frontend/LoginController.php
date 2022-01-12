@@ -42,6 +42,7 @@ class LoginController extends Controller
         return redirect()->route('user.login');
     }
     public function logout(){
+        session()->forget('cart');
         Auth::logout();
         return redirect()->route('home');
     }

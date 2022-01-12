@@ -18,8 +18,9 @@
     <tr>
       <td>{{ $a->name }}</td>
       <td>{{ $a->email }}</td>
-      <a href="{{route('user.view',$data->id)}}" class="btn btn-success">view</a>
-
+      <td>
+      <a href="{{route('user.view',$a->id)}}" class="btn btn-success">View</a>
+    </td>
     </tr>
     @endforeach
   </tbody>

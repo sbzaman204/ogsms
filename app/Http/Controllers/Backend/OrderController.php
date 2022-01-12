@@ -8,8 +8,14 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-   public function order()   
+   public function order(Request $request)   
     {
+
+        $search=$request->query('search');
+        if($search){
+            $order=Order::where('product_id','Like','%'.$search.'%')->get();
+            return view('admin.layout.order',compact('order'));
+        }
         // dd("ok");
         $order = Order::all();
 

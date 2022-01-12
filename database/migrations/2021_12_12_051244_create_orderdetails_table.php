@@ -15,11 +15,13 @@ class CreateOrderdetailsTable extends Migration
     {
         Schema::create('orderdetails', function (Blueprint $table) {
             $table->id();
-            $table->double('order_id');
-            $table->double('product_id');
-            $table->double('quantity');
-            $table->double('unit_price');
-            $table->double('sub_total');
+            $table->foreignId('order_id');
+            $table->foreignId('product_id');
+            $table->string('product_name');
+            $table->integer('product_quantity');
+            $table->integer('product_price');
+            $table->string('sub_total');
+            $table->string('order_status')->default('pending');
             $table->timestamps();
         });
     }

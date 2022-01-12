@@ -32,6 +32,7 @@
         <tbody>
           
         @foreach(session()->get('cart')??[] as $key=>$data)
+
           <tr>
             <td class="cart_product">
               <a href=""><img src="{{url('uploads/'.$data['image'])}}" alt="" width="75px" height="75px"></a>
@@ -89,7 +90,7 @@
 							<li><span style="font-weight: bold;">Shipping Cost:</span> <span style="padding-left:25px;">Free</span></li>
 							<li><span style="font-weight: bold;">Total:</span> <span style="padding-left: 80px;">BDT {{$total+60}}</span></li>
           </ul>
-            <a class="btn btn-primary" href="#">Check Out</a>
+            <a class="btn btn-primary" href="{{ route('checkoutShow') }}">Check Out</a>
         </div>
       </div>
     </div>

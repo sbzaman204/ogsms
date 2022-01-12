@@ -17,7 +17,7 @@ use App\Http\Controllers\Frontend\ShowProductController;
 use App\Http\Controllers\Frontend\ShowCategoryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
-
+use App\Http\Controllers\Frontend\CheckoutController;
 
 
 
@@ -63,6 +63,8 @@ Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('add-
 Route::get('/cart',[CartController::class,'cartshow'])->name('cart');
 Route::get('/cart/remove/{id}', [CartController::class,'CartRemove'])->name('cart.remove');
 Route::put('/cart/update/{id}', [CartController::class,'CartUpdate'])->name('cart.update');
+Route::get('/checkout/show',[CheckoutController::class,'checkoutShow'])->name('checkoutShow');
+Route::post('/add/shipping/details', [CheckoutController::class,'addCheckout'])->name('add.shipping');
 
 
 Route::group(['middleware'=>'auth'],function(){
@@ -117,6 +119,7 @@ Route::get('/orders/view/{id}',[OrderController::class,'orderview'])->name('orde
 
 // User part
 Route::get('/user',[UserController::class,'user'])->name('user');
+Route::get('/user/view/{id}',[UserController::class,'userview'])->name('user.view');
 
 
 
