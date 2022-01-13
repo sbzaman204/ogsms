@@ -16,10 +16,18 @@ class LoginController extends Controller
     }
     public function doRegistration(Request $request){
         // dd($request->all());
+        $image ='';
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $image=date('Ymdhms').'.'.$file->getClientOrginalExtension();
+            $file->storeAs('/uploads',$image);
+        }
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>bcrypt( $request->password),
+            'image'=>$image,
         ]);
         return redirect()->route('user.login');
         

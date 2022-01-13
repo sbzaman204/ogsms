@@ -22,8 +22,13 @@
           <div class="dbl-field">
             <div class="field">
               <input type="text" name="password" placeholder="Enter your password">
-              
-            </div>
+              <br>
+              <br>
+              <br><br><br>
+              <div class="field">
+                <input type="file" name="image" placeholder="Image">
+                
+              </div>
             {{-- <div class="field">
               <input type="text" name="website" placeholder="Enter your website">
               <i class='fas fa-globe'></i>

@@ -32,17 +32,24 @@ use App\Http\Controllers\Frontend\CheckoutController;
 //   return view('website.layouts.content');
 // })->name('frontend.user');
 
-Route::get('/',[HomeController::class,'home'])->name('home');
 
-Route::get('/categoryWiseProduct/{id}',[HomeController::class,'categoryWiseProduct'])->name('categorywiseproduct');
-Route::get('/product/details{id}',[HomeController::class,'productdetails'])->name('productDetails');
+
+
+// website part
+Route::get('/',[HomeController::class,'home'])->name('home');
 
 // Registration part
 Route::get('/user/registration',[LoginController::class,'registrationform'])->name('user.registration');
 Route::post('/user/do/registration',[LoginController::class,'doRegistration'])->name('user.do.registration');
+
 // login part
 Route::get('/user/login',[LoginController::class,'loginform'])->name('user.login');
 Route::post('/user/do/login',[LoginController::class,'doLogin'])->name('user.do.login');
+
+Route::get('/categoryWiseProduct/{id}',[HomeController::class,'categoryWiseProduct'])->name('categorywiseproduct');
+Route::get('/product/details{id}',[HomeController::class,'productdetails'])->name('productDetails');
+
+Route::group(['middleware'=>'auth'],function(){
 // logout part
 Route::get('/user/logout',[LoginController::class,'logout'])->name('user.logout');
 //show product part
@@ -50,24 +57,26 @@ Route::get('/user/showproduct',[ShowProductController::class,'showproduct'])->na
 // show category part
 Route::get('/user/showcategory',[ShowCategoryController::class,'showcategory'])->name('user.showcategory');
 
-
-
-Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
-Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
-
 // customer profile part
 Route::get('/customerprofile',[CustomerProfileController::class, 'customerprofile'])->name('customer.profile');
 
 // cart
 Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('add-to-cart');
 Route::get('/cart',[CartController::class,'cartshow'])->name('cart');
-Route::get('/cart/remove/{id}', [CartController::class,'CartRemove'])->name('cart.remove');
+ Route::get('/cart/remove/{id}', [CartController::class,'CartRemove'])->name('cart.remove');
 Route::put('/cart/update/{id}', [CartController::class,'CartUpdate'])->name('cart.update');
 Route::get('/checkout/show',[CheckoutController::class,'checkoutShow'])->name('checkoutShow');
 Route::post('/add/shipping/details', [CheckoutController::class,'addCheckout'])->name('add.shipping');
 
 
-Route::group(['middleware'=>'auth'],function(){
+});
+
+
+
+Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
+Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
+
+Route::group(['middleware'=>['auth','admin']],function(){
 Route::get('/admin',function(){
     return view('admin.master');
 
@@ -77,6 +86,12 @@ Route::get('/admin/logout', [AdminLoginController::class,'logout'])->name('admin
 
 Route::get('/admin/home', [contentcontroller::class,'admin']);
 Route::get('/dashboard', [contentcontroller::class,'dashboard'])->name('dashboard');
+
+
+
+
+
+
 
 // category part
 Route::get('/category',[CategoryController::class, 'category'])->name('category');
@@ -120,6 +135,7 @@ Route::get('/orders/view/{id}',[OrderController::class,'orderview'])->name('orde
 // User part
 Route::get('/user',[UserController::class,'user'])->name('user');
 Route::get('/user/view/{id}',[UserController::class,'userview'])->name('user.view');
+Route::get('/user/{id}/delete',[UserController::class, 'userdelete'])->name('user.delete');
 
 
 
@@ -143,7 +159,7 @@ Route::post('/orderdetailsform/store',[OrderdetailsController::class,'orderdetai
 
 
 
-Route::get('/stock',[StockController::class,'stock'])->name('stock');
+// Route::get('/stock',[StockController::class,'stock'])->name('stock');
 
 // Route::post('/purchasestore',[PurchaseController::class,'purchasestore'])->name('purchasestore');
 

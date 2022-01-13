@@ -21,11 +21,11 @@
 
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showproduct')}}">Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.showcategory')}}">Category</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('customer.profile')}}">Customer Profile</a></li>
+               
                 
                 <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                 @if(auth()->user())
-
+                <li class="nav-item"><a class="nav-link" href="{{route('customer.profile')}}">Customer Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.logout')}}">Log Out</a></li>
                 @else
 

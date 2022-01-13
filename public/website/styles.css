@@ -164,7 +164,7 @@ form .dbl-field{
 }
 .dbl-field .field{
   height: 50px;
-  display: flex;
+  /* display: flex; */
   position: relative;
   width: calc(100% / 2 - 13px);
 }

@@ -18,6 +18,8 @@ class AdminTableSeeder extends Seeder
             'name'=>'admin',
             'email'=>'sadiamoon119@gmail.com',
             'password'=>bcrypt('123'),
+            'role'=>'admin',
+            'image'=>''
         ]);
     }
 }

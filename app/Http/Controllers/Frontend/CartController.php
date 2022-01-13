@@ -106,7 +106,13 @@ class CartController extends Controller
             return redirect()->back()->with('message', 'Product Updated into cart successfully!');
         }
     }
+    public function getCart()
+    {
+       $carts= session()->get('cart');
+        return view('website.cart',compact('carts'));
+    }
 
+    
 
 
 }

@@ -20,6 +20,8 @@
       <td>{{ $a->email }}</td>
       <td>
       <a href="{{route('user.view',$a->id)}}" class="btn btn-success">View</a>
+      <a href="{{route('user.delete',$a->id) }}" class="btn btn-success">Delete</a>
+
     </td>
     </tr>
     @endforeach

@@ -61,10 +61,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 order details
                             </a>
-                            <a class="nav-link" href="{{route('stock')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                stock
-                            </a>
+                            
 
                         </div>
                     </div>

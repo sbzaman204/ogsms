@@ -57,7 +57,7 @@ class ProductController extends Controller
     }
     public function productedit($id){
         // dd($id);
-        $product = product::find($id);
+        $products = product::find($id);
         return view('admin.layout.productedit',compact('product'));
     }
     public function productupdate(Request $request,$id){
