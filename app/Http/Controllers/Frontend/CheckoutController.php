@@ -11,7 +11,8 @@ class CheckoutController extends Controller
 {
     public function checkoutShow()
     {
-        return view('website.layouts.checkout');
+        $order =  Order::all();
+        return view('website.layouts.checkout',compact('order'));
     }
 
     public function addCheckout(Request $request)
@@ -20,12 +21,9 @@ class CheckoutController extends Controller
         // dd($cart);
        $order =  Order::create([
             'user_id' => auth()->user()->id,
-            'email'=>$request->input('email'),
-            'name'=>$request->input('name'),
-            'address'=>$request->input('address'),
-            'city'=>$request->input('city'),
-            'email'=>$request->input('email'),
-            'phone_number'=>$request->input('phone_number'),
+            'product_id'=>$request->input('product_id'),
+            'order_number'=>$request->input('order_number'),
+            'order_date'=>$request->input('order_date'),
             'grant_total'=>array_sum(array_column($cart,'sub_total'))
         ]);
 

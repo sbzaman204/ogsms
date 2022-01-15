@@ -23,8 +23,9 @@ class OrderdetailsController extends Controller
         Orderdetails::create([
             'order_id'=>$request->order_id,
             'product_id'=>$request->product_id,
-            'quantity'=>$request->quantity,
-            'unit_price'=>$request->unit_price,
+            'product_name'=>$request->product_name,
+            'product_quantity'=>$request->product_quantity,
+            'product_price'=>$request->product_price,
             'sub_total'=>$request->sub_total,
         ]);
         return redirect()->back();

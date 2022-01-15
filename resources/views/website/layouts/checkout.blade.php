@@ -12,11 +12,10 @@
                         <div class="form-one">
                             <form method="post" action="{{route('add.shipping')}}">
                                 @csrf
-                                <input type="email" placeholder="Enter Email Address" name="email">
-                                <input type="text" placeholder="Enter Name" name="name">
-                                <input type="text" placeholder="Enter address" name="address">
-                                <input type="text" placeholder="Enter city" name="city">
-                                <input type="number" placeholder="Enter Phone Number" name="phone_number">
+                                <input type="integer" placeholder="user_id" name="user_id">
+                                <input type="integer" placeholder="product_id" name="product_id">
+                                <input type="integer" placeholder="order_number" name="order_number">
+                                <input type="date" placeholder="order_date" name="order_date">
                                 <select name="payment_method" id="payment_method" class="form-control">
                                <option value="0">Select a payment method</option>
                                     

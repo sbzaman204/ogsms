@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\ShowCategoryController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Backend\PaymentController;
 
 
 
@@ -65,6 +66,8 @@ Route::post('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('add-
 Route::get('/cart',[CartController::class,'cartshow'])->name('cart');
  Route::get('/cart/remove/{id}', [CartController::class,'CartRemove'])->name('cart.remove');
 Route::put('/cart/update/{id}', [CartController::class,'CartUpdate'])->name('cart.update');
+
+// checkout
 Route::get('/checkout/show',[CheckoutController::class,'checkoutShow'])->name('checkoutShow');
 Route::post('/add/shipping/details', [CheckoutController::class,'addCheckout'])->name('add.shipping');
 
@@ -155,6 +158,17 @@ Route::post('/purchases/store',[PurchaseController::class,'store'])->name('purch
 Route::get('/orderdetails',[OrderdetailsController::class,'orderdetails'])->name('order-details');
 Route::get('/orderdetailsform',[OrderdetailsController::class,'orderdetailsform'])->name('orderdetails.form');
 Route::post('/orderdetailsform/store',[OrderdetailsController::class,'orderdetailsstore'])->name('orderdetails.store');
+
+
+
+
+// payment part
+Route::get('/payment',[PaymentController::class,'payment'])->name('payment');
+
+
+
+
+
 
 
 

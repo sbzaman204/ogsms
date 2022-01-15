@@ -16,6 +16,8 @@
       <th scope="col">product description</th>
       <th scope="col">product image</th>
       <th scope="col">product status</th>
+      <th scope="col">Action</th>
+
 
     
     </tr>

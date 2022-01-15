@@ -21,7 +21,7 @@ class ProductController extends Controller
         return view('admin.layout.productform',compact('categories'));
     }
     public function store(Request $request){
-        // dd($request->all());
+        // dd($request->all()); 
         $filename='';
         if($request->hasFile('product_image'))
         {
@@ -43,7 +43,7 @@ class ProductController extends Controller
 
         ]);
         product::create([
-            'category_id'=>$request->category_id,
+            'Category_id'=>$request->category_id,
             'product_name'=>$request->product_name,
             'product_price'=>$request->product_price,
             'product_quantity'=>$request->product_quantity,
@@ -58,11 +58,11 @@ class ProductController extends Controller
     public function productedit($id){
         // dd($id);
         $products = product::find($id);
-        return view('admin.layout.productedit',compact('product'));
+        return view('admin.layout.productedit',compact('products'));
     }
     public function productupdate(Request $request,$id){
         // dd($request);
-        dd($id);
+        // dd($id);
         $product=product::find($request->id);
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;

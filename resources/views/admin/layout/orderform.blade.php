@@ -5,7 +5,7 @@
     @csrf
 
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Customer ID</label>
+      <label for="exampleInputEmail1" class="form-label">User ID</label>
       <input name="customer_id" type="number" class="form-control"required>
       
     </div>

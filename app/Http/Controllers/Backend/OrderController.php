@@ -28,7 +28,7 @@ class OrderController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-        'customer_id'=>'required',
+        'user_id'=>'required',
             'product_id'=>'required',
             'order_number'=>'required',
             'order_date'=>'required',
@@ -36,7 +36,7 @@ class OrderController extends Controller
             
         ]);
         Order::create([
-            'customer_id'=>$request->customer_id,
+            'user_id'=>$request->user_id,
             'product_id'=>$request->product_id,
             'order_number'=>$request->order_number,
             'order_date'=>$request->order_date,

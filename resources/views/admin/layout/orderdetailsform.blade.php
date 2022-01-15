@@ -14,11 +14,15 @@
       <input name="product_id" type="number" class="form-control"required>
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">quantity</label>
+      <label for="exampleInputPassword1" class="form-label">product name</label>
+      <input name="product_name" type="string" class="form-control"required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">product quantity</label>
         <input name="quantity" type="number" class="form-control"required>
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">unit price</label>
+        <label for="exampleInputPassword1" class="form-label">product price</label>
         <input name="unit_price" type="number" class="form-control"required>
       </div>
       <div class="mb-3">
