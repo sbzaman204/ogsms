@@ -5,7 +5,7 @@
 <div class="myform">
     <div class="wrapper">
         <header>Registration Info</header>
-        <form action="{{route('user.do.registration')}}" method='post'>
+        <form action="{{route('user.do.registration')}}" method='post' enctype="multipart/form-data">
           @csrf
           <div class="dbl-field">
               
@@ -21,7 +21,7 @@
           </div>
           <div class="dbl-field">
             <div class="field">
-              <input type="text" name="password" placeholder="Enter your password">
+              <input type="passowrd" name="password" placeholder="Enter your password">
               <br>
               <br>
               <br><br><br>

@@ -19,9 +19,8 @@ class CreateOrderdetailsTable extends Migration
             $table->foreignId('product_id');
             $table->string('product_name');
             $table->integer('product_quantity');
-            $table->integer('product_price');
+            $table->integer('unit_price');
             $table->string('sub_total');
-            $table->string('order_status')->default('pending');
             $table->timestamps();
         });
     }

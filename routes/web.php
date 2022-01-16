@@ -76,6 +76,8 @@ Route::post('/add/shipping/details', [CheckoutController::class,'addCheckout'])-
 
 
 
+// Admin part
+
 Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
 

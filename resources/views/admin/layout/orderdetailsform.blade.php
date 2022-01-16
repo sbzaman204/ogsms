@@ -22,7 +22,7 @@
         <input name="quantity" type="number" class="form-control"required>
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">product price</label>
+        <label for="exampleInputPassword1" class="form-label">unit_price</label>
         <input name="unit_price" type="number" class="form-control"required>
       </div>
       <div class="mb-3">

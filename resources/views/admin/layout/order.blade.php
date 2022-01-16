@@ -25,8 +25,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">User ID</th>
-      <th scope="col">Product ID</th>
+      <th scope="col">User Email</th>
+      {{-- <th scope="col">Product ID</th> --}}
       <th scope="col">Order Number</th>
       <th scope="col">Order Date</th>
       <th scope="col">Action</th>
@@ -35,8 +35,8 @@
   <tbody>
     @foreach($order as $data)
     <tr>
-      <th scope="row">{{$data->user_id}}</th>
-      <td>{{($data->product_id)}}</td>
+      <th scope="row">{{$data->orderRelation->email}}</th>
+      {{-- <td>{{($data->productRelation->product_name)}}</td> --}}
       <td>{{($data->order_number)}}</td>
       <td>{{($data->order_date)}}</td>
       <td>

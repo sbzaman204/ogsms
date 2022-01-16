@@ -20,7 +20,7 @@ class LoginController extends Controller
         if($request->hasFile('image'))
         {
             $file=$request->file('image');
-            $image=date('Ymdhms').'.'.$file->getClientOrginalExtension();
+            $image=date('Ymdhms').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$image);
         }
         User::create([

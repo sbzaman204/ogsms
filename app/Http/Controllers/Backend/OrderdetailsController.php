@@ -20,12 +20,13 @@ class OrderdetailsController extends Controller
     }
     public function orderdetailsstore(Request $request)
     {
+        // dd($request->all());
         Orderdetails::create([
             'order_id'=>$request->order_id,
             'product_id'=>$request->product_id,
             'product_name'=>$request->product_name,
             'product_quantity'=>$request->product_quantity,
-            'product_price'=>$request->product_price,
+            'unit_price'=>$request->unit_price,
             'sub_total'=>$request->sub_total,
         ]);
         return redirect()->back();

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\Orderdetails;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -17,7 +19,8 @@ class OrderController extends Controller
             return view('admin.layout.order',compact('order'));
         }
         // dd("ok");
-        $order = Order::all();
+        $order = Order::with('orderRelation','productRelation')->get();
+        // dd($order);
 
         return view('admin.layout.order',compact('order'));
     } 
@@ -47,8 +50,10 @@ class OrderController extends Controller
     public function orderview($id){
         // dd($id);
         $data = Order::find($id);
-        
-            return view('admin.layout.orderview',compact('data'));
+        // dd($data);
+        $order_data = Orderdetails::where('order_id',$id)->get();
+        // dd($order_data);
+            return view('admin.layout.orderview',compact('data','order_data'));
 
         }
     }
