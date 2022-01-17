@@ -47,20 +47,13 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 user
                             </a>
-                            <a class="nav-link" href="{{route('purchase')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                purchase
-                            </a>
-
+                           
                             <a class="nav-link" href="{{route('order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 order 
                             </a>
 
-                            <a class="nav-link" href="{{route('order-details')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                order details
-                            </a>
+                            
                             <a class="nav-link" href="{{route('payment')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 payment

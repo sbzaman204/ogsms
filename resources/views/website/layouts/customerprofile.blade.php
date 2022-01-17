@@ -86,6 +86,26 @@
                 </div>
             </div>
         </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">order number</th>
+                <th scope="col">product name</th>
+                <th scope="col">order date</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach($orders as $order)
+              <tr>
+                <th scope="row">1</th>
+                <td>{{ $order->id }}</td>
+                <td>{{ $order->productRelation->product_name }}</td>
+                <td>{{ $order->order_date }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
         </div>
         </div>
 

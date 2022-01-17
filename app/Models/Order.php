@@ -17,6 +17,6 @@ class Order extends Model
 
     public function productRelation()
     {
-        return $this->belongsTo(product::class);     
+        return $this->belongsTo(product::class,'product_id','id');     
     }
 }
