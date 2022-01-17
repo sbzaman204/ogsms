@@ -166,6 +166,7 @@ Route::post('/orderdetailsform/store',[OrderdetailsController::class,'orderdetai
 
 // payment part
 Route::get('/payment',[PaymentController::class,'payment'])->name('payment');
+Route::put('/order/update/{id}',[PaymentController::class,'orderUpdate'])->name('order.update');
 
 
 

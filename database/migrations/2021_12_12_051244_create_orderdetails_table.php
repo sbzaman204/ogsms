@@ -21,6 +21,7 @@ class CreateOrderdetailsTable extends Migration
             $table->integer('product_quantity');
             $table->integer('unit_price');
             $table->string('sub_total');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
