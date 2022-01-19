@@ -19,6 +19,8 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Backend\PaymentController;
+use App\Http\Controllers\Frontend\UserPaymentController;
+
 
 
 
@@ -70,6 +72,15 @@ Route::put('/cart/update/{id}', [CartController::class,'CartUpdate'])->name('car
 // checkout
 Route::get('/checkout/show',[CheckoutController::class,'checkoutShow'])->name('checkoutShow');
 Route::post('/add/shipping/details', [CheckoutController::class,'addCheckout'])->name('add.shipping');
+Route::get('/myprofile/order/details/{id}',[CustomerProfileController::class,'orderView'])->name('myprofile.orderDetails.show');
+
+
+
+
+Route::get('/user/payment/{order_id}',[UserPaymentController::class,'userpayment'])->name('user.payment');
+Route::post('/user/payment/post/{order_id}',[UserPaymentController::class,'userPaymentPost'])->name('user.payment.post');
+
+
 
 
 });
@@ -167,6 +178,8 @@ Route::post('/orderdetailsform/store',[OrderdetailsController::class,'orderdetai
 // payment part
 Route::get('/payment',[PaymentController::class,'payment'])->name('payment');
 Route::put('/order/update/{id}',[PaymentController::class,'orderUpdate'])->name('order.update');
+
+
 
 
 

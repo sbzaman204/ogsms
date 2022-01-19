@@ -25,20 +25,30 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">#SL</th>
+      <th scope="col">user Name</th>
+
       <th scope="col">User Email</th>
       {{-- <th scope="col">Product ID</th> --}}
-      <th scope="col">Order Number</th>
-      <th scope="col">Order Date</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">Phone Number</th>
       <th scope="col">Action</th>
+
+
     </tr>
   </thead>
   <tbody>
-    @foreach($order as $data)
+    @foreach($order as $key=>$data)
     <tr>
-      <th scope="row">{{$data->orderRelation->email}}</th>
-      {{-- <td>{{($data->productRelation->product_name)}}</td> --}}
-      <td>{{($data->order_number)}}</td>
-      <td>{{($data->order_date)}}</td>
+      <td>{{ $key+1 }}</td>
+      <td scope="row">{{$data->orderRelation->name}}</th>
+       <td>{{ $data->email }}</td>
+      <td>{{($data->address)}}</td>
+      <td>{{($data->city)}}</td>
+      <td>{{($data->phone_number)}}</td>
+
+
       <td>
         <a class="btn btn-primary" href="{{route('order.view',$data->id)}}">View</a>
       </td> 

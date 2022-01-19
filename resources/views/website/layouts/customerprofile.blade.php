@@ -89,21 +89,33 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">order number</th>
-                <th scope="col">product name</th>
-                <th scope="col">order date</th>
+                <th scope="col">#SL</th>
+                <th scope="col">user Name</th>
+          
+                <th scope="col">User Email</th>
+                {{-- <th scope="col">Product ID</th> --}}
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
-                @foreach($orders as $order)
-              <tr>
-                <th scope="row">1</th>
-                <td>{{ $order->id }}</td>
-                <td>{{ $order->productRelation->product_name }}</td>
-                <td>{{ $order->order_date }}</td>
-              </tr>
-              @endforeach
+                @foreach($orderT as $key=>$data)
+                <tr>
+                  <td>{{ $key+1 }}</td>
+                  <td scope="row">{{$data->name}}</th>
+                   <td>{{ $data->email }}</td>
+                  <td>{{($data->address)}}</td>
+                  <td>{{($data->city)}}</td>
+                  <td>{{($data->phone_number)}}</td>           
+                  <td>
+                    <a class="btn btn-primary" href="{{ route('myprofile.orderDetails.show',$data->id) }}">View</a>
+                    <a class="btn btn-primary" href="{{ route('user.payment',$data->id)}}">payment</a>
+
+                  </td> 
+                </tr>
+                @endforeach      
             </tbody>
           </table>
         </div>

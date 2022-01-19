@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Orderdetails;
 
 class CheckoutController extends Controller
@@ -18,12 +19,14 @@ class CheckoutController extends Controller
     public function addCheckout(Request $request)
     {
         $cart = session('cart');
-        // dd($cart);
+    
        $order =  Order::create([
             'user_id' => auth()->user()->id,
-            'product_id'=>$request->input('product_id'),
-            'order_number'=>$request->input('order_number'),
-            'order_date'=>$request->input('order_date'),
+            'email'=>$request->input('email'),
+            'name'=>$request->input('name'),
+            'address'=>$request->input('address'),
+            'city'=>$request->input('city'),
+            'phone_number'=>$request->input('phone_number'),
             'grant_total'=>array_sum(array_column($cart,'sub_total'))
         ]);
 
@@ -41,6 +44,19 @@ class CheckoutController extends Controller
             ]);
             
         }
+        // dd($order_products);
+        $orderP = (array)$order_products;
+        Payment::create([
+             'order_id'=>$order->id,
+             'transection_id'=>$request->input('transection_id'),
+             'payment_method'=>$request->input('payment_method'),
+             'grant_total'=>array_sum(array_column($orderP,'sub_total'))
+
+        ]);
+
+    
+
+
         return redirect()->route('home');
     }
 }
