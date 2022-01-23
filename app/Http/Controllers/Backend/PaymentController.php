@@ -11,7 +11,8 @@ class PaymentController extends Controller
 {
     public function payment()
     {
-         return view('admin.layout.payment');
+        $details=Payment::all();
+         return view('admin.layout.payment',compact('details'));
 
     }
 

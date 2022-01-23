@@ -15,7 +15,7 @@ class CustomerProfileController extends Controller
         
           $orderT = Order::where('user_id',$id)->get();
         // dd(auth()->user());
-        // dd($orders);
+        // dd($orderT);
         return view('website.layouts.customerprofile',compact('orderT'));
     }
 

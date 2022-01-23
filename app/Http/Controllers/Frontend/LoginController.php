@@ -29,7 +29,7 @@ class LoginController extends Controller
             'password'=>bcrypt( $request->password),
             'image'=>$image,
         ]);
-        return redirect()->route('user.login');
+        return redirect()->route('user.login')->with('message','You are registerd user now');
         
     }
 

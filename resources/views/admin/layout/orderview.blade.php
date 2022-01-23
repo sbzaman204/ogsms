@@ -133,25 +133,17 @@
   
   <div class="page-content container">
       <div class="page-header text-blue-d2">
-          <h1 class="page-title text-secondary-d1">
-              Invoice
-              <small class="page-info">
-                  <i class="fa fa-angle-double-right text-80"></i>
-                  ID: #111-222
-              </small>
-          </h1>
+          
   
           <div class="page-tools">
               <div class="action-buttons">
-                  <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
-                      <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
-                      Print
-                  </a>
                   
               </div>
           </div>
       </div>
-  
+
+      <div id="print">
+
       <div class="container px-0">
           <div class="row mt-4">
               <div class="col-12 col-lg-12">
@@ -159,7 +151,7 @@
                       <div class="col-12">
                           <div class="text-center text-150">
                               <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
-                              <span class="text-default-d3">Bootdey.com</span>
+                              <span class="text-default-d3">Moon Shop</span>
                           </div>
                       </div>
                   </div>
@@ -182,15 +174,14 @@
                                   Invoice
                               </div>
   
-                              <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">ID:</span> #111-222</div>
   
-                              <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Issue Date:</span> Oct 12, 2019</div>
   
-                              <div class="my-2"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i> <span class="text-600 text-90">Status:</span> <span class="badge badge-warning badge-pill px-25">Unpaid</span></div>
                           </div>
                       </div>
                       <!-- /.col -->
                   </div>
+
+                 
 
               <div class="table-responsive">
                   <table class="table table-striped table-borderless border-0 border-b-2 brc-default-l1">
@@ -235,9 +226,10 @@
                            
                            
                          </tbody>
+                         <button style="float: right; background-color:#478fcc; color: white; font-weight: bold; margin-bottom: 20px;" class="btn btn success" type="submit" onclick="PrintDiv('print');" value="Print">Print</button>
                   </table>
               </div>
-              
+          </div>
                       </div>
                       
                        </table>
@@ -251,6 +243,20 @@
   {{--  end invoice html --}}
   
   @endsection
+
+  <script language="javascript">
+      function PrintDiv(divName) {
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+          document.body.innerHTML = printContents;
+          window.print();
+          document.body.innerHTML = originalContents;
+      }
+
+
+
+
+  </script>
   
   
   

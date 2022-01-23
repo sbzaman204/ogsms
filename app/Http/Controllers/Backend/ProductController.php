@@ -53,7 +53,7 @@ class ProductController extends Controller
 
 
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message','product add succesfully');
     }
     public function productedit($id){
         // dd($id);

@@ -4,9 +4,11 @@
 
 <div class="myform">
     <div class="wrapper">
+     
         <header>Registration Info</header>
         <form action="{{route('user.do.registration')}}" method='post' enctype="multipart/form-data">
           @csrf
+         <div>
           <div class="dbl-field">
               
             <div class="field">
@@ -22,9 +24,8 @@
           <div class="dbl-field">
             <div class="field">
               <input type="passowrd" name="password" placeholder="Enter your password">
-              <br>
-              <br>
-              <br><br><br>
+              
+             <div class="d-flex ">
               <div class="field">
                 <input type="file" name="image" placeholder="Image">
                 
@@ -38,14 +39,15 @@
             <textarea placeholder="Write your message" name="message"></textarea>
             <i class="material-icons">message</i>
           </div> --}}
-          <div class="border-top card-body text-center">
+          <div class="card-body text-center">
             <button type="submit"><strong>Registration</strong></button>
-            <span></span>
           </div>
+             </div>
+         </div>
         </form>
         
         
-        <div class="border-top card-body text-center">Have an account?<a href="{{route('user.login')}}">Log In</a></div>
+        <div class="card-body text-center">Have an account?<a href="{{route('user.login')}}">Log In</a></div>
 
     </div>
 </div>

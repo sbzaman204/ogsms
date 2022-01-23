@@ -585,7 +585,7 @@ ul {
                         <div class="order_info d-flex flex-row">
                             <form action="{{ route('add-to-cart',$product->id) }}" method="post">
                                 @csrf
-                            <input type="number" min="1" max="5" value="1" name="quantity"/>
+                            <input type="number" min="1" max="5" value="1" name="product_quantity"/>
                              <button type="submit" style="background-color: gray; padding-right:5px; padding-left:5px;">Add to Cart</button>
                             </form>
                         </div>

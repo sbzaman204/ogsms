@@ -39,7 +39,7 @@ class CategoryController extends Controller
             'category_status'=>$request->category_status,
 
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message','Category add succesfully');
     }
 
     public function categoryDetails($id)

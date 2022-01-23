@@ -15,11 +15,11 @@ class OrderController extends Controller
 
         $search=$request->query('search');
         if($search){
-            $order=Order::where('product_id','Like','%'.$search.'%')->get();
+            $order=Order::where('email','Like','%'.$search.'%')->get();
             return view('admin.layout.order',compact('order'));
         }
         // dd("ok");
-        $order = Order::with('orderRelation','productRelation')->get();
+        $order = Order::with('orderRelation','productRelation')->orderBy('id','DESC')->get();
         // dd($order);
 
         return view('admin.layout.order',compact('order'));

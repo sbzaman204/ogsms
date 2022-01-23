@@ -32,6 +32,7 @@
         <tbody>
           
         @foreach(session()->get('cart')??[] as $key=>$data)
+      
 
           <tr>
             <td class="cart_product">
@@ -79,6 +80,8 @@
   </div>
   </section> 
   
+
+  @if(session()->get('cart'))
   <section id="do_action">
   <div class="container">
     <div class="row">			
@@ -95,6 +98,7 @@
       </div>
     </div>
   </div>
-</section><!--/#do_action-->
+</section>
+@endif<!--/#do_action-->
 
 @endsection

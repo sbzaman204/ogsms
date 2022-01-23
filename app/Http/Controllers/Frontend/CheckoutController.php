@@ -27,7 +27,7 @@ class CheckoutController extends Controller
             'address'=>$request->input('address'),
             'city'=>$request->input('city'),
             'phone_number'=>$request->input('phone_number'),
-            'grant_total'=>array_sum(array_column($cart,'sub_total'))
+            'grant_total'=>array_sum(array_column($cart,'sub_total')),
         ]);
 
 
@@ -50,12 +50,12 @@ class CheckoutController extends Controller
              'order_id'=>$order->id,
              'transection_id'=>$request->input('transection_id'),
              'payment_method'=>$request->input('payment_method'),
-             'grant_total'=>array_sum(array_column($orderP,'sub_total'))
+             'grant_total'=>array_sum(array_column($cart,'sub_total'))
 
         ]);
 
     
-
+        session()->forget('cart');
 
         return redirect()->route('home');
     }

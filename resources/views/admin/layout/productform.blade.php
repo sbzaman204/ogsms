@@ -2,8 +2,18 @@
 
 
 @section('content')
+
 {{-- <a class="btn btn-primary" href="{{route('product.form')}}">Add product iteams</a> --}}
 <div class="container" style="margin-top: 20px;">
+  @if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
+@if($errors->any())
+@foreach($errors->all() as $er)
+    <p class="alert alert-danger">{{$er}}</p>
+@endforeach
+@endif
 <form action="{{route('product.store')}}" method='post' enctype="multipart/form-data">
   @csrf
   {{-- <div class="mb-3">

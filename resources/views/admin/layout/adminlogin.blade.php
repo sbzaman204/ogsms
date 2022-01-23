@@ -4,6 +4,15 @@
 
 <div class="myform">
     <div class="wrapper">
+      @if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
+@if($errors->any())
+@foreach($errors->all() as $er)
+    <p class="alert alert-danger">{{$er}}</p>
+@endforeach
+@endif
         <header>Log In Here</header>
 
         <form action="{{route('admin.do.login')}}" method='post'>

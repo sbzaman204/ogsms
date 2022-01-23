@@ -14,7 +14,7 @@
       <input  type="text" name="search" class="form-control" placeholder="enter search">
     </div>
     <button type="submit" class="btn btn-primary">
-   submit
+   search
     </button>
   </div>
   
