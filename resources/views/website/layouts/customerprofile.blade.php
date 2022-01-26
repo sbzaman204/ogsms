@@ -107,8 +107,7 @@
                   <td>{{($data->phone_number)}}</td>           
                   <td>
                     <a class="btn btn-primary" href="{{ route('myprofile.orderDetails.show',$data->id) }}">View</a>
-                    <a class="btn btn-primary" href="{{ route('user.payment',$data->id)}}">payment</a>
-
+                    
                   </td> 
                 </tr>
                 @endforeach      

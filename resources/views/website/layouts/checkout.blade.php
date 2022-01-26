@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12" style="float:right">
                     <div class="bill-to">
-                        <p style="margin-bottom: 50px;">Please Fill this form....</p>
+                        <p style="margin-bottom: 18px;">Please Fill this form....</p>
                         <div class="form-one" style="width: 60%;">
                             <form method="post" action="{{route('add.shipping')}}">
                                 @csrf
