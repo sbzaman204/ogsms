@@ -141,9 +141,19 @@
               </div>
           </div>
       </div>
+      <button style="float: right; background-color:#478fcc; color: white; font-weight: bold; margin-bottom: 20px;" class="btn btn success" type="submit" onclick="PrintDiv('print');" value="Print">Print</button>
+
 
       <div id="print">
-
+          {{-- start for removing the url from pdf --}}
+          <style type="text/css" media="print">
+            @page{
+                size: auto;
+                margin:0;
+            }
+          </style>
+        {{-- end --}}
+        
       <div class="container px-0">
           <div class="row mt-4">
               <div class="col-12 col-lg-12">
@@ -226,7 +236,6 @@
                            
                            
                          </tbody>
-                         <button style="float: right; background-color:#478fcc; color: white; font-weight: bold; margin-bottom: 20px;" class="btn btn success" type="submit" onclick="PrintDiv('print');" value="Print">Print</button>
                   </table>
               </div>
           </div>

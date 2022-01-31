@@ -23,7 +23,7 @@
                 <li class="nav-item"><a class="nav-link" href=""></a></li>
                
                 
-                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li> --}}
                 @if(auth()->user())
                 <li class="nav-item"><a class="nav-link" href="{{route('customer.profile')}}">Customer Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('user.logout')}}">Log Out</a></li>

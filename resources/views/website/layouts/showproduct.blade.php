@@ -15,7 +15,7 @@
                     <a href="{{ route('productDetails',$data->id) }}"><img class="mx-auto rounded-circle" src="{{url('/uploads/'.$data->product_image)}}" alt="..." /></a>
                     <h4>{{ $data->product_name }}</h4>
                     <p class="text-muted">Details</p>
-                    <button class="btn btn-success">Order Now</button>
+                    {{-- <button class="btn btn-success">Order Now</button> --}}
                 </div>
             </div>
         @endforeach

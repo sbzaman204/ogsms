@@ -89,7 +89,7 @@ Route::post('/user/payment/post/{order_id}',[UserPaymentController::class,'userP
 
 // Admin part
 
-Route::get('/admin/login',[AdminLoginController::class, 'login'])->name('admin.login');
+Route::get('/admin',[AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminLoginController::class, 'dologin'])->name('admin.do.login');
 
 Route::group(['middleware'=>['auth','admin']],function(){
